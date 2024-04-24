@@ -25,13 +25,13 @@ public class LoginGUI extends LayOut {
             btn_login.addActionListener(e -> {
                 // ilgili alanların doluluğu kontrol edilir
                 if (Helper.isFieldEmpty(fld_username_tcno) || Helper.isFieldEmpty(fld_password)) {
-                    Helper.showMsg("Hata", "Lütfen ilgili alanları doldurunuz");
+                    Helper.showMsg("Hata", "Lütfen ilgili alanları doldurunuz");// --SELECTION 25--
                 } else {
                     // giriş işleminin gerçekleşmesi için kontroller yapılır
                     if (loginManager.login(fld_username_tcno.getText(), fld_password.getText())) {
                         dispose();
                     } else {
-                        Helper.showMsg("Uyarı", "Kullanıcı adı veya şifre hatalı !");
+                        Helper.showMsg("Uyarı", "Kullanıcı adı veya şifre hatalı !");// --SELECTION 25--
                     }
                 }
             });

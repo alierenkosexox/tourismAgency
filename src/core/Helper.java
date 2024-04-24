@@ -12,7 +12,7 @@ public class Helper {
         JOptionPane.showMessageDialog(null, message, title, JOptionPane.INFORMATION_MESSAGE);
     }
 
-    // Text fld alanlarının boş olup olmadığını kontrol eden metod
+    // Text fld alanlarının boş olup olmadığını kontrol eden metod --SELECTION 25--
     public static boolean isFieldEmpty(JTextField field) {
         return field.getText().isEmpty();
     }

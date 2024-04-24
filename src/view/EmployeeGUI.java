@@ -112,7 +112,7 @@ public class EmployeeGUI extends LayOut {
         tbl_hotel_PopupMenu.add("Sil").addActionListener(e -> {
             if (employeeManager.deleteHotel(Integer.parseInt(tbl_hotel.getValueAt(tbl_hotel.getSelectedRow(), 0).toString()))) {
                 loadHotelTable();
-                Helper.showMsg("Başarılı", "Otel Silindi");
+                Helper.showMsg("Başarılı", "Otel Silindi");// --SELECTION 25--
             }
         });
         tbl_hotel.setComponentPopupMenu(tbl_hotel_PopupMenu); // menülerin çalışması için en son setledik
@@ -148,14 +148,14 @@ public class EmployeeGUI extends LayOut {
                     Integer.parseInt(tbl_rezervations.getValueAt(tbl_rezervations.getSelectedRow(), 9).toString())
             )) {
                 loadRezervationList();
-                Helper.showMsg("Başarılı", "İşlem Güncellendi");
+                Helper.showMsg("Başarılı", "İşlem Güncellendi");// --SELECTION 25--
             }
         });
         tbl_rezervations_popup.add("Sil").addActionListener(e -> {
             if (employeeManager.deleteReservation(Integer.parseInt(tbl_rezervations.getValueAt(tbl_rezervations.getSelectedRow(), 0).toString()))) {
                 employeeManager.increaseStock(Integer.parseInt(tbl_rezervations.getValueAt(tbl_rezervations.getSelectedRow(), 3).toString()));
                 loadRezervationList();
-                Helper.showMsg("Başarılı", "Rezervasyon Silindi");
+                Helper.showMsg("Başarılı", "Rezervasyon Silindi");// --SELECTION 25--
             }
         });
         tbl_rezervations.setComponentPopupMenu(tbl_rezervations_popup);
@@ -193,7 +193,7 @@ public class EmployeeGUI extends LayOut {
             int adult_price = Integer.parseInt(tbl_search.getValueAt(tbl_search.getSelectedRow(), 15).toString());
 
             if (fld_startDate.getText().isEmpty() || fld_endDate.getText().isEmpty()) {
-                Helper.showMsg("Uyarı", "Uygun aralıkta tarih giriniz");
+                Helper.showMsg("Uyarı", "Uygun aralıkta tarih giriniz");// --SELECTION 25--
                 return;
             }
             int days = employeeManager.calculateDay(fld_startDate.getText(), fld_endDate.getText());
@@ -214,7 +214,7 @@ public class EmployeeGUI extends LayOut {
         loadSearchTable();
         btn_addHotel.addActionListener(e -> {
             if (Helper.isFieldEmpty(fld_hotel_name) || Helper.isFieldEmpty(fld_hotel_email) || Helper.isFieldEmpty(fld_hotel_phoneNumber)) {
-                Helper.showMsg("Uyarı!", "İlgili alanların tamamını doldurunuz");
+                Helper.showMsg("Uyarı!", "İlgili alanların tamamını doldurunuz");// --SELECTION 25--
             } else {
                 if (btn_addHotel.getText().equals("Güncelle")) {
                     employeeManager.updateHotel(
@@ -227,7 +227,7 @@ public class EmployeeGUI extends LayOut {
                             fld_hotel_phoneNumber.getText(),
                             Integer.parseInt((String) cmb_hotel_star.getSelectedItem()));
                     loadHotelTable();
-                    Helper.showMsg("Başarılı", "Güncelleme İşlemi gerçekleşti");
+                    Helper.showMsg("Başarılı", "Güncelleme İşlemi gerçekleşti");// --SELECTION 25--
                 } else {
                     employeeManager.addHotel(
                             fld_hotel_name.getText(),
@@ -238,7 +238,7 @@ public class EmployeeGUI extends LayOut {
                             fld_hotel_phoneNumber.getText(),
                             Integer.parseInt((String) cmb_hotel_star.getSelectedItem()));
                     loadHotelTable();
-                    Helper.showMsg("Başarılı", "Ekleme işlemi başarılı");
+                    Helper.showMsg("Başarılı", "Ekleme işlemi başarılı");// --SELECTION 25--
                 }
             }
         });
@@ -255,7 +255,7 @@ public class EmployeeGUI extends LayOut {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (!employeeManager.isValidDates(fld_startDate.getText(), fld_endDate.getText())) {
-                    Helper.showMsg("Uyarı!", "Uygun değer aralığında tarih giriniz (Gün/Ay/Yıl)");
+                    Helper.showMsg("Uyarı!", "Uygun değer aralığında tarih giriniz (Gün/Ay/Yıl)");// --SELECTION 25--
                 } else {
                     ArrayList<SearchResult> result = employeeManager.search(
                             employeeManager.searchQuery(fld_city.getText(), fld_city.getText(), fld_city.getText(),

@@ -15,7 +15,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public class EmployeeDao {
-
+    //Show hotel listing table
     public ArrayList<Hotel> getHotelList() {
         ArrayList<Hotel> hotelList = new ArrayList<>();
         try (ResultSet rs = DBConnector.getPreparedStatement("SELECT * FROM tbl_hotel").executeQuery()) {
@@ -57,7 +57,7 @@ public class EmployeeDao {
         return hotel;
     }
 
-
+    // Add new hotel
     public boolean addHotel(String hotelName, String city, String region, String address, String hotelEmail, String hotelPhone, int star) {
         try (PreparedStatement ps = DBConnector.getPreparedStatement("INSERT INTO tbl_hotel (name,city,region,address,email,phoneNumber,stars) VALUES(?,?,?,?,?,?,?)")) {
             ps.setString(1, hotelName);
@@ -76,7 +76,7 @@ public class EmployeeDao {
         return false;
     }
 
-
+        // update hotel with database
     public boolean updateHotel(int hotelID, String hotelName, String city, String region, String address, String hotelEmail, String hotelPhone, int star) {
         try (PreparedStatement ps = DBConnector.getPreparedStatement("UPDATE tbl_hotel SET name=?,city=?,region=?,address=?,email=?,phoneNumber=?,stars=? WHERE hotel_id=?")) {
             ps.setString(1, hotelName);
@@ -96,7 +96,7 @@ public class EmployeeDao {
         return false;
     }
 
-
+        // Delete otel
     public boolean deleteHotel(int hotelID) {
         try (PreparedStatement ps = DBConnector.getPreparedStatement("DELETE FROM tbl_hotel WHERE hotel_id=" + hotelID)) {
             int result = ps.executeUpdate();
@@ -111,7 +111,7 @@ public class EmployeeDao {
         return false;
     }
 
-
+    // search method
     public String searchQuery(String city, String region, String hotelName, String startDate, String endDate, int bedCount) {
         if (startDate.isEmpty()) {
         }
@@ -137,7 +137,7 @@ public class EmployeeDao {
         return query;
     }
 
-
+    //search method
     public ArrayList<SearchResult> search(String query) {
         ArrayList<SearchResult> resultList = new ArrayList<>();
         SearchResult object;

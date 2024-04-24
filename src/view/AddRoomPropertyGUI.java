@@ -24,6 +24,7 @@ public class AddRoomPropertyGUI extends LayOut {
         this.roomID = roomID;
         add(contanier);
         guiInitialize(400,400);
+
         // kullanıcıya tabloyu göstermek için yapılan işlemler
         mdl_room_property = new DefaultTableModel();
         mdl_room_property.setColumnIdentifiers(new Object[]{"Oda Özellikleri"});
@@ -51,11 +52,11 @@ public class AddRoomPropertyGUI extends LayOut {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(Helper.isFieldEmpty(txt_room_property)){
-                    Helper.showMsg("Uyarı","Eksik metin");
+                    Helper.showMsg("Uyarı","Eksik metin");// --SELECTION 25--
                 }else{
                     if(detailManager.addHotelRoomProperty(roomID,txt_room_property.getText())){
                         loadRoomPropertyList();
-                        Helper.showMsg("Başarılı","Başarıyla Eklendi");
+                        Helper.showMsg("Başarılı","Başarıyla Eklendi");// --SELECTION 25--
                     }
                 }
             }

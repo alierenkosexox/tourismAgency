@@ -69,7 +69,7 @@ public class EmployeeHotelDetailGUI extends LayOut {
                 loadSeasonList();
                 Helper.showMsg("Başarılı","Otel sezon silindi !");
             }else{
-                Helper.showMsg("Uyarı!","Otel sezon silerken hata oluştu");}
+                Helper.showMsg("Uyarı!","Otel sezon silerken hata oluştu");}// --SELECTION 25--
         });
         tbl_season.setComponentPopupMenu(tbl_season_popup);
         loadSeasonList();
@@ -93,9 +93,9 @@ public class EmployeeHotelDetailGUI extends LayOut {
         tbl_pension_popup.add("Delete").addActionListener(e ->{
             if(detailManager.deleteHotelPension(Integer.parseInt(tbl_pension.getValueAt(tbl_pension.getSelectedRow(),0).toString()))){
                 loadPensionList();
-                Helper.showMsg("Başarılı","Pansiyon Silindi");
+                Helper.showMsg("Başarılı","Pansiyon Silindi");// --SELECTION 25--
             }else{
-                Helper.showMsg("Uyarı","Pansiyon silerken hata oluştu !");}
+                Helper.showMsg("Uyarı","Pansiyon silerken hata oluştu !");}// --SELECTION 25--
         });
         tbl_pension.setComponentPopupMenu(tbl_pension_popup);
         loadPensionList();
@@ -103,7 +103,7 @@ public class EmployeeHotelDetailGUI extends LayOut {
 
         // otel özelliklerinin listelendiği tabloyu oluşturma
         mdl_hotelFeature = new DefaultTableModel();
-        mdl_hotelFeature.setColumnIdentifiers(new Object[]{"Özellik"});
+        mdl_hotelFeature.setColumnIdentifiers(new Object[]{"Özellik"});// --SELECTION 25--
         row_hotelFeature = new Object[1];
         tbl_hotel_feature.setModel(mdl_hotelFeature);
         tbl_hotel_feature.addMouseListener(new MouseAdapter() {
@@ -118,9 +118,9 @@ public class EmployeeHotelDetailGUI extends LayOut {
             if(detailManager.deleteHotelFeature(hotel.getHotelID(),
                     tbl_hotel_feature.getValueAt(tbl_hotel_feature.getSelectedRow(),0).toString())){
                 loadHotelFeatureList();
-                Helper.showMsg("Başarılı","Pansiyon silindi");
+                Helper.showMsg("Başarılı","Pansiyon silindi");// --SELECTION 25--
             }else{
-                Helper.showMsg("Uyarı","Pansiyon silinirken hata oluştu");}
+                Helper.showMsg("Uyarı","Pansiyon silinirken hata oluştu");}// --SELECTION 25--
         });
         tbl_hotel_feature.setComponentPopupMenu(tbl_hotelFeature_popup);
         loadHotelFeatureList();
@@ -158,9 +158,9 @@ public class EmployeeHotelDetailGUI extends LayOut {
                         Integer.parseInt(tbl_room.getValueAt(tbl_room.getSelectedRow(),7).toString())
                 )){
                     loadHotelRoomList();
-                    Helper.showMsg("Başarılı","Güncelleme işlemi başarılı");
+                    Helper.showMsg("Başarılı","Güncelleme işlemi başarılı");// --SELECTION 25--
                 }else {
-                    Helper.showMsg("Uyarı","Güncelleme işlemi başarısız");
+                    Helper.showMsg("Uyarı","Güncelleme işlemi başarısız");// --SELECTION 25--
                 }
             }
         });
@@ -168,7 +168,7 @@ public class EmployeeHotelDetailGUI extends LayOut {
         tbl_room_popup.add("Sil").addActionListener(e -> {
             if(detailManager.deleteRoom((int)tbl_room.getValueAt(tbl_room.getSelectedRow(),0))){
                 loadHotelRoomList();
-                Helper.showMsg("Başarılı","Silme işlemi başarılı");
+                Helper.showMsg("Başarılı","Silme işlemi başarılı");// --SELECTION 25--
             }
         });
         tbl_room.setComponentPopupMenu(tbl_room_popup);
@@ -203,7 +203,7 @@ public class EmployeeHotelDetailGUI extends LayOut {
                 );
                 loadPensionList();
                 loadRoomPensionCombobox();
-                Helper.showMsg("Başarılı","Ekleme işlemi gerçekleşti");
+                Helper.showMsg("Başarılı","Ekleme işlemi gerçekleşti");// --SELECTION 25--
             }
         });
         // Otellere özellik eklenmesi
@@ -215,7 +215,7 @@ public class EmployeeHotelDetailGUI extends LayOut {
                         ((HotelFeature) cmb_hotelFeatures.getSelectedItem()).getFeatureName()
                 );
                 loadHotelFeatureList();
-                Helper.showMsg("Başarılı","Ekleme işlemi başarılı");
+                Helper.showMsg("Başarılı","Ekleme işlemi başarılı");// --SELECTION 25--
             }
 
         });
@@ -223,7 +223,7 @@ public class EmployeeHotelDetailGUI extends LayOut {
         // otellere oda ekleme
         btn_addHotelRoom.addActionListener(e -> {
             if(Helper.isFieldEmpty(fld_room_type) || Helper.isFieldEmpty(fld_room_bedNumber) || !isNumeric(fld_room_bedNumber.getText()) || Helper.isFieldEmpty(fld_room_stock)|| !isNumeric(fld_room_stock.getText()) || Helper.isFieldEmpty(fld_room_price_child) || !isNumeric(fld_room_price_child.getText()) || Helper.isFieldEmpty(fld_room_price_adult) || !isNumeric(fld_room_price_adult.getText())){
-                Helper.showMsg("Uyarı!","İlgili alanları doğru şekilde doldurun");
+                Helper.showMsg("Uyarı!","İlgili alanları doğru şekilde doldurun");// --SELECTION 25--
             }else {
                 if(detailManager.addHotelRoom(
                         hotel.getHotelID(),
@@ -236,7 +236,7 @@ public class EmployeeHotelDetailGUI extends LayOut {
                         Integer.parseInt(fld_room_price_adult.getText())
                 )){
                     loadHotelRoomList();
-                    Helper.showMsg("Başarılı","Ekleme işlemi başarılı");
+                    Helper.showMsg("Başarılı","Ekleme işlemi başarılı");// --SELECTION 25--
                 }
             }
         });
@@ -253,7 +253,7 @@ public class EmployeeHotelDetailGUI extends LayOut {
             date = LocalDate.parse(dateToCheck2,DATE_TIME_FORMATTER);
             return true;
         }catch (Exception e){
-            Helper.showMsg("Uyarı!","İstenilen formatta tarih giriniz");
+            Helper.showMsg("Uyarı!","İstenilen formatta tarih giriniz");// --SELECTION 25--
         }
         return false;
     }

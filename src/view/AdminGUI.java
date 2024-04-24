@@ -66,17 +66,17 @@ public class AdminGUI extends LayOut {
                     String.valueOf(cmb_userType.getSelectedItem())
             )){
                 loadPersonelTable();
-                Helper.showMsg("Başarılı","Kullanıcı Güncellendi");
+                Helper.showMsg("Başarılı","Kullanıcı Güncellendi");// --SELECTION 25--
             } else {
-                Helper.showMsg("Hata","Beklenmeyen bir hata oluştu !");
+                Helper.showMsg("Hata","Beklenmeyen bir hata oluştu !");// --SELECTION 25--
             }
         });
         tbl_personel_popup.add("Sil").addActionListener(e ->{
             if(adminManager.deleteUser(Integer.parseInt(tbl_personel.getValueAt(tbl_personel.getSelectedRow(),0).toString()))){
                 loadPersonelTable();
-                Helper.showMsg("Başarılı","Kullanıcı Silindi");
+                Helper.showMsg("Başarılı","Kullanıcı Silindi");// --SELECTION 25--
             } else {
-                Helper.showMsg("Hata","Beklenmeyen bir hata oluştu !");
+                Helper.showMsg("Hata","Beklenmeyen bir hata oluştu !");// --SELECTION 25--
             }
         });
         tbl_personel.setComponentPopupMenu(tbl_personel_popup);
@@ -84,7 +84,7 @@ public class AdminGUI extends LayOut {
         btn_addUser.addActionListener(e -> {
             if (Helper.isFieldEmpty(fld_tcNo) || Helper.isFieldEmpty(fld_userName) || Helper.isFieldEmpty(fld_password) ||
                     Helper.isFieldEmpty(fld_name) || Helper.isFieldEmpty(fld_surname)) {
-                Helper.showMsg("Uyarı !", "İlgili alanları doldurunuz");
+                Helper.showMsg("Uyarı !", "İlgili alanları doldurunuz");// --SELECTION 25--
             } else {
                 if (adminManager.addUser(
                         fld_tcNo.getText(),
@@ -95,7 +95,7 @@ public class AdminGUI extends LayOut {
                         cmb_userType.getSelectedItem().toString()
                 )) {
                     loadPersonelTable();
-                    Helper.showMsg("Başarılı", "Kullanıcı Eklendi");
+                    Helper.showMsg("Başarılı", "Kullanıcı Eklendi");// --SELECTION 25--
                 }
             }
         });
