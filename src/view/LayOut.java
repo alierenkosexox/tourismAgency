@@ -1,24 +1,22 @@
 package view;
 
-import core.Helper;
+import core.Config;
 
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.util.ArrayList;
-import java.util.Iterator;
-import javax.swing.JFrame;
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
+import javax.swing.*;
 
-public class LayOut extends JFrame {
-    public LayOut() {
+public abstract class LayOut extends JFrame {
+    public void guiInitialize(int width, int height) {
+        setSize(width, height);
+        setLocationRelativeTo(null);
+        //setLocation(Helper.screenCenterPoint("x",getSize()),Helper.screenCenterPoint("y",getSize()));
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setTitle(Config.PROJECT_TITLE);
+        //setResizable(false);
+        setVisible(true);
     }
 
-    public void guiInitilaze(int width, int height) {
-        this.setDefaultCloseOperation(2);
-        this.setTitle("Tourism Agency");
-        this.setSize(width, height);
-        this.setLocation(Helper.getLocationPoint("x", this.getSize()), Helper.getLocationPoint("y", this.getSize()));
-        this.setVisible(true);
+    public int getTableSelectedRow(JTable table, int index) {
+        return Integer.parseInt(table.getValueAt(table.getSelectedRow(), index).toString());
     }
+
 }

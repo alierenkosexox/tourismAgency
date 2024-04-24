@@ -5,9 +5,8 @@ import entity.User;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 
-public class UserDao {
+public class LoginDao {
     public int login(String username_tcno, String password) {
         String query = "SELECT * FROM tbl_user WHERE ((tcNo=? OR username=?) AND password=?)";
         try (PreparedStatement ps = DBConnector.getPreparedStatement(query)) {
@@ -29,10 +28,16 @@ public class UserDao {
     public User getUserByID(int id) {
         User user = null;
         String query = "SELECT * FROM tbl_user WHERE id=" + id;
-        try (PreparedStatement ps = DBConnector.getPreparedStatement(query)) {
-            ResultSet rs = ps.executeQuery();
+        // PreparedStatement ve ResultSet ayrı yapıyorduk
+        try (ResultSet rs = DBConnector.getPreparedStatement(query).executeQuery()) {
             if (rs.next()) {
-                user = match(rs);
+                user = new User(rs.getInt("id"),
+                        rs.getString("tcNo"),
+                        rs.getString("username"),
+                        rs.getString("password"),
+                        rs.getString("name"),
+                        rs.getString("surname"),
+                        rs.getString("usertype"));
             }
             //rs.close();
             //ps.close();
@@ -40,15 +45,5 @@ public class UserDao {
             e.printStackTrace();
         }
         return user;
-    }
-
-    private User match(ResultSet rs) throws SQLException {
-        return new User(rs.getInt("id"),
-                rs.getString("tcNo"),
-                rs.getString("username"),
-                rs.getString("password"),
-                rs.getString("name"),
-                rs.getString("surname"),
-                rs.getString("usertype"));
     }
 }

@@ -1,12 +1,9 @@
-import core.Helper;
-import view.LoginView;
+import business.LoginManager;
+import dao.LoginDao;
+import view.LoginGUI;
 
 public class App {
-    public App() {
-    }
-
     public static void main(String[] args) {
-        //Helper.setTheme();
-        new LoginView();
+        LoginGUI run = new LoginGUI(new LoginManager(new LoginDao()));
     }
 }

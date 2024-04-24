@@ -2,38 +2,26 @@ package entity;
 
 public class Pension {
     private int id;
-    private int hotelId;
-    private String pension_type;
+    private String pensionName;
 
-    public Pension(int hotelId, String pension_type) {
-        this.hotelId = hotelId;
-        this.pension_type = pension_type;
-    }
-
-    public Pension(){
+    public Pension(int id, String pensionName) {
+        this.id = id;
+        this.pensionName = pensionName;
     }
 
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public String getPensionName() {
+        return pensionName;
     }
 
-    public int getHotelId() {
-        return hotelId;
+    public void setPensionName(String pensionName) {
+        this.pensionName = pensionName;
     }
 
-    public void setHotelId(int hotelId) {
-        this.hotelId = hotelId;
-    }
-
-    public String getPension_type() {
-        return pension_type;
-    }
-
-    public void setPension_type(String pension_type) {
-        this.pension_type = pension_type;
+    public String toString() {
+        return this.pensionName;
     }
 }

@@ -1,52 +1,58 @@
 package entity;
 
-import java.time.LocalDate;
-
 public class Season {
     private int id;
-    private int hotelId;
-    private LocalDate startDate;
-    private LocalDate finishDate;
+    private int hotelID;
+    private String seasonName;
+    private String startDate;
+    private String endDate;
 
-    public Season(int hotelId, LocalDate startDate, LocalDate finishDate) {
-        this.hotelId = hotelId;
+    public Season(int id, int hotelID, String seasonName, String startDate, String endDate) {
+        this.id = id;
+        this.hotelID = hotelID;
+        this.seasonName = seasonName;
         this.startDate = startDate;
-        this.finishDate = finishDate;
+        this.endDate = endDate;
+    }
+
+    @Override
+    public String toString() {
+        return this.seasonName;
     }
 
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public int getHotelID() {
+        return hotelID;
     }
 
-    public int getHotelId() {
-        return hotelId;
+    public void setHotelID(int hotelID) {
+        this.hotelID = hotelID;
     }
 
-    public void setHotelId(int hotelId) {
-        this.hotelId = hotelId;
+    public String getSeasonName() {
+        return seasonName;
     }
 
-    public LocalDate getFinishDate() {
-        return finishDate;
+    public void setSeasonName(String seasonName) {
+        this.seasonName = seasonName;
     }
 
-    public void setFinishDate(LocalDate finishDate) {
-        this.finishDate = finishDate;
-    }
-
-    public LocalDate getStartDate() {
+    public String getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(LocalDate startDate) {
+    public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
-    public Season(){
+    public String getEndDate() {
+        return endDate;
+    }
 
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
     }
 }

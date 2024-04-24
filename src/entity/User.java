@@ -1,27 +1,38 @@
 package entity;
 
 public class User {
-    private int id;
+    private int userID;
+    private String tcNo;
     private String username;
     private String password;
-    private Role role;
+    private String name;
+    private String surname;
+    private String userType;
 
-    public User() {
-    }
-
-    public User(int id, String username, String password, String role) {
-        this.id = id;
+    public User(int userID, String tcNo, String username, String password, String name, String surname, String userType) {
+        this.userID = userID;
+        this.tcNo = tcNo;
         this.username = username;
         this.password = password;
-        this.role = Role.valueOf(role);
+        this.name = name;
+        this.surname = surname;
+        this.userType = userType;
     }
 
-    public int getId() {
-        return id;
+    public String getPassword() {
+        return password;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public int getUserID() {
+        return userID;
+    }
+
+    public String getTcNo() {
+        return tcNo;
+    }
+
+    public void setTcNo(String tcNo) {
+        this.tcNo = tcNo;
     }
 
     public String getUsername() {
@@ -32,19 +43,27 @@ public class User {
         this.username = username;
     }
 
-    public String getPassword() {
-        return password;
+    public String getName() {
+        return name;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getRole() {
-        return role;
+    public String getSurname() {
+        return surname;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getUserType() {
+        return userType;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType;
     }
 }

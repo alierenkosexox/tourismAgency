@@ -2,86 +2,65 @@ package entity;
 
 public class Room {
     private int id;
-    private int hotelId;
-    private int pensionId;
-    private int seasonId;
-    private String type;
+    private int hotelID;
+    private int seasonID;
+    private int pensionID;
+    private String roomType;
+    private int bedNumber;
     private int stock;
-    private double adultPrice;
-    private double childPrice;
-    private int bedCapacity;
-    private int squareMeter;
-    private boolean television;
-    private boolean minibar;
-    private boolean gameConsole;
-    private boolean cashBox;
-    private boolean projection;
+    private int priceChild;
+    private int priceAdult;
 
-    public Room(){
-
-    }
-
-    public Room(int id, int hotelId,
-                int pensionId, int seasonId,
-                String type, int stock, double adultPrice,
-                double childPrice, int bedCapacity, int squareMeter,
-                boolean television, boolean minibar, boolean gameConsole,
-                boolean cashBox, boolean projection) {
+    public Room(int id, int hotelID, int seasonID, int pensionID, String roomType, int bedNumber, int stock, int priceChild, int priceAdult) {
         this.id = id;
-        this.hotelId = hotelId;
-        this.pensionId = pensionId;
-        this.seasonId = seasonId;
-        this.type = type;
+        this.hotelID = hotelID;
+        this.seasonID = seasonID;
+        this.pensionID = pensionID;
+        this.roomType = roomType;
+        this.bedNumber = bedNumber;
         this.stock = stock;
-        this.adultPrice = adultPrice;
-        this.childPrice = childPrice;
-        this.bedCapacity = bedCapacity;
-        this.squareMeter = squareMeter;
-        this.television = television;
-        this.minibar = minibar;
-        this.gameConsole = gameConsole;
-        this.cashBox = cashBox;
-        this.projection = projection;
-    }
-
-    public int getHotelId() {
-        return hotelId;
-    }
-
-    public void setHotelId(int hotelId) {
-        this.hotelId = hotelId;
-    }
-
-    public int getPensionId() {
-        return pensionId;
-    }
-
-    public void setPensionId(int pensionId) {
-        this.pensionId = pensionId;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public int getSeasonId() {
-        return seasonId;
-    }
-
-    public void setSeasonId(int seasonId) {
-        this.seasonId = seasonId;
+        this.priceChild = priceChild;
+        this.priceAdult = priceAdult;
     }
 
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public int getHotelID() {
+        return hotelID;
+    }
+
+    public int getSeasonID() {
+        return seasonID;
+    }
+
+    public void setSeasonID(int seasonID) {
+        this.seasonID = seasonID;
+    }
+
+    public int getPensionID() {
+        return pensionID;
+    }
+
+    public void setPensionID(int pensionID) {
+        this.pensionID = pensionID;
+    }
+
+    public String getRoomType() {
+        return roomType;
+    }
+
+    public void setRoomType(String roomType) {
+        this.roomType = roomType;
+    }
+
+    public int getBedNumber() {
+        return bedNumber;
+    }
+
+    public void setBedNumber(int bedNumber) {
+        this.bedNumber = bedNumber;
     }
 
     public int getStock() {
@@ -92,75 +71,19 @@ public class Room {
         this.stock = stock;
     }
 
-    public double getAdultPrice() {
-        return adultPrice;
+    public int getPriceChild() {
+        return priceChild;
     }
 
-    public void setAdultPrice(double adultPrice) {
-        this.adultPrice = adultPrice;
+    public int getPriceAdult() {
+        return priceAdult;
     }
 
-    public double getChildPrice() {
-        return childPrice;
+    public void setPriceAdult(int _priceAdult) {
+        this.priceAdult = _priceAdult;
     }
 
-    public void setChildPrice(double childPrice) {
-        this.childPrice = childPrice;
-    }
-
-    public int getBedCapacity() {
-        return bedCapacity;
-    }
-
-    public void setBedCapacity(int bedCapacity) {
-        this.bedCapacity = bedCapacity;
-    }
-
-    public int getSquareMeter() {
-        return squareMeter;
-    }
-
-    public void setSquareMeter(int squareMeter) {
-        this.squareMeter = squareMeter;
-    }
-
-    public boolean isTelevision() {
-        return television;
-    }
-
-    public void setTelevision(boolean television) {
-        this.television = television;
-    }
-
-    public boolean isGameConsole() {
-        return gameConsole;
-    }
-
-    public void setGameConsole(boolean gameConsole) {
-        this.gameConsole = gameConsole;
-    }
-
-    public boolean isMinibar() {
-        return minibar;
-    }
-
-    public void setMinibar(boolean minibar) {
-        this.minibar = minibar;
-    }
-
-    public boolean isCashBox() {
-        return cashBox;
-    }
-
-    public void setCashBox(boolean cashBox) {
-        this.cashBox = cashBox;
-    }
-
-    public boolean isProjection() {
-        return projection;
-    }
-
-    public void setProjection(boolean projection) {
-        this.projection = projection;
+    public void setPriceChild(int _priceChild) {
+        this.priceChild = _priceChild;
     }
 }

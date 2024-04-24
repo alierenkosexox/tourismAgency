@@ -1,40 +1,72 @@
 package entity;
 
 public class Hotel {
-    private int id;
-    private String name;
+    private final int hotelID;
+    private String hotelName;
+    private String city;
+    private String region;
     private String address;
-    private String phone;
-    private String email;
-    private String star;
-    private boolean carPark;
-    private boolean wifi;
-    private boolean pool;
-    private boolean fitness;
-    private boolean concierge;
-    private boolean spa;
-    private boolean roomService;
+    private String hotelEmail;
+    private String hotelPhoneNumber;
+    private int hotelStars;
 
-    public Hotel(boolean spa, boolean roomService,
-                 boolean concierge, boolean fitness,
-                 boolean wifi, boolean pool, boolean carPark,
-                 String email, String phone, String address,
-                 String name, int id, String star) {
-        this.spa = spa;
-        this.roomService = roomService;
-        this.concierge = concierge;
-        this.fitness = fitness;
-        this.wifi = wifi;
-        this.pool = pool;
-        this.carPark = carPark;
-        this.email = email;
-        this.phone = phone;
+
+    public Hotel(int hotelID, String hotelName, String city, String region, String address, String hotelEmail, String hotelPhoneNumber, int hotelStars) {
+        this.hotelID = hotelID;
+        this.hotelName = hotelName;
+        this.city = city;
+        this.region = region;
         this.address = address;
-        this.name = name;
-        this.id = id;
-        this.star = star;
+        this.hotelEmail = hotelEmail;
+        this.hotelPhoneNumber = hotelPhoneNumber;
+        this.hotelStars = hotelStars;
     }
 
-    public Hotel() {
+    public String getCity() {
+        return city;
+    }
+
+    public String getRegion() {
+        return region;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public int getHotelID() {
+        return hotelID;
+    }
+
+    public String getHotelName() {
+        return hotelName;
+    }
+
+    public void setHotelName(String hotelName) {
+        this.hotelName = hotelName;
+    }
+
+    public String getHotelEmail() {
+        return hotelEmail;
+    }
+
+    public void setHotelEmail(String hotelEmail) {
+        this.hotelEmail = hotelEmail;
+    }
+
+    public String getHotelPhoneNumber() {
+        return hotelPhoneNumber;
+    }
+
+    public void setHotelPhoneNumber(String hotelPhoneNumber) {
+        this.hotelPhoneNumber = hotelPhoneNumber;
+    }
+
+    public int getHotelStars() {
+        return hotelStars;
+    }
+
+    public void setHotelStars(int hotelStars) {
+        this.hotelStars = hotelStars;
     }
 }
