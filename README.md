@@ -33,4 +33,4 @@ Sezon ekleme, listeleme
 Fiyat yönetimi
 Oda arama
 Rezervasyon işlemleri
-projenin çalıştırıldığı videoya aşağıdaki linkten ulaşabilirsiniz:
+projenin çalıştırıldığı videoya aşağıdaki linkten ulaşabilirsiniz:https://www.loom.com/share/f24af2183d9e4c759b1f202a6e8dac5f?sid=b4eadffb-7d24-4464-97ae-a2a810618d1d
